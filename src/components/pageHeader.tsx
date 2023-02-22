@@ -5,7 +5,7 @@ const mainFont = Azeret_Mono({ subsets: ["latin"] });
 
 const PageHeader = () => {
   return (
-    <header className={`flex justify-between ${mainFont.className} bg-zinc-700 rounded-md p-2 items-center`}>
+    <header className={`flex justify-between ${mainFont.className} bg-zinc-800 rounded-md p-2 items-center`}>
       <h1 className="text-sm">DashboardProject.</h1>
 
       <nav className="flex gap-2">

@@ -6,8 +6,6 @@ import { z } from "zod";
  */
 const server = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
-  SUPABASE_URL: z.string(),
-  SUPABASE_KEY: z.string()
 });
 
 /**
@@ -28,10 +26,8 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
-  SUPABASE_URL: process.env.SUPABASE_URL,
-  SUPABASE_KEY: process.env.SUPABASE_KEY,
-  NEXT_PUBLIC_SUPABASE_URL: process.env.SUPABASE_URL,
-  NEXT_PUBLIC_SUPABASE_KEY: process.env.SUPABASE_KEY,
+  NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  NEXT_PUBLIC_SUPABASE_KEY: process.env.NEXT_PUBLIC_SUPABASE_KEY,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 
@@ -53,7 +49,7 @@ if (!!process.env.SKIP_ENV_VALIDATION == false) {
     isServer
       ? merged.safeParse(processEnv) // on server we can validate all env vars
       : client.safeParse(processEnv) // on client we can only validate the ones that are exposed
-  );
+  )
 
   if (parsed.success === false) {
     console.error(
