@@ -10,7 +10,7 @@ const LoginPage = () => {
   return (
     <PageLayout>
       <Head>
-        <title>Dashboard | Login</title>
+        <title>Dashboard | Log in</title>
       </Head>
 
       <section>

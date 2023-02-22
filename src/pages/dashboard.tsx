@@ -1,7 +1,6 @@
 import Head from "next/head";
 import PageLayout from "~/components/pageLayout";
 
-
 const DashboardPage = () => {
   return (
     <PageLayout>
