@@ -28,7 +28,7 @@ const Homepage = () => {
 
       <section>
         <Link
-          href="/login"
+          href="/account"
           className="flex items-center justify-center rounded-md bg-red-500 py-2"
           passHref
         >

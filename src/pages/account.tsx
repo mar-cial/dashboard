@@ -19,11 +19,14 @@ const LoginPage = () => {
 
       {!session ? (
         <Auth
-            supabaseClient={supabase}
-            appearance={{theme: ThemeSupa}}
-            theme="dark"
+          providers={["apple", "facebook", "github", "google"]}
+          supabaseClient={supabase}
+          appearance={{ theme: ThemeSupa }}
+          theme="dark"
         />
-      ): <div>Logged in.</div>}
+      ) : (
+        <div>Logged in.</div>
+      )}
     </PageLayout>
   );
 };

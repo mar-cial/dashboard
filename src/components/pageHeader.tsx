@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { MdHome, MdDashboard, MdLogin, MdLogout } from "react-icons/md";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { Azeret_Mono } from "@next/font/google";
-
-const mainFont = Azeret_Mono({ subsets: ["latin"] });
 
 const PageHeader = () => {
   const session = useSession();
@@ -11,7 +8,7 @@ const PageHeader = () => {
 
   return (
     <header
-      className={`flex justify-between ${mainFont.className} items-center rounded-md bg-zinc-800 p-2`}
+      className={`flex justify-between items-center rounded-md bg-zinc-800 p-2`}
     >
       <h1 className="text-sm">Dashboard</h1>
 
@@ -23,7 +20,7 @@ const PageHeader = () => {
           <MdDashboard />
         </Link>
         {!session ? (
-          <Link href={"/login"} passHref className="text-sm">
+          <Link href={"/account"} passHref className="text-sm">
             <MdLogin />
           </Link>
         ) : (
