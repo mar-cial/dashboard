@@ -2,15 +2,16 @@ import Head from "next/head";
 import PageLayout from "~/components/pageLayout";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import Account from '~/components/account'
 
-const LoginPage = () => {
+const AccountPage = () => {
   const session = useSession();
   const supabase = useSupabaseClient();
 
   return (
     <PageLayout>
       <Head>
-        <title>Dashboard | Log in</title>
+        <title>Dashboard | Account</title>
       </Head>
 
       <section>
@@ -25,10 +26,10 @@ const LoginPage = () => {
           theme="dark"
         />
       ) : (
-        <div>Logged in.</div>
+        <Account session={session} />
       )}
     </PageLayout>
   );
 };
 
-export default LoginPage;
+export default AccountPage;
